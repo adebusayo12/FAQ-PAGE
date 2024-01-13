@@ -1,0 +1,155 @@
+:root {
+  /* FONTS */
+  --body-font: "Work Sans", sans-serif;
+
+  /* COLOR PALLET */
+
+  --white: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+
+  /* SPACING */
+  --spacing-sm: 0.8rem;
+  --spacing-md: 1.6rem;
+  --spacing-lg: 3.2rem;
+  --spacing-xl: 6.4rem;
+
+  --standard-width: 114.4rem;
+  --standard-box-shadow: 0px 2px 4rem rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: var(--body-font);
+  background-color: var(--Light-pink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  display: block;
+  background-image: url(../images/background-pattern-desktop.svg);
+  width: 100%;
+  height: 35vh;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+/* CONTAINER SECTION */
+
+.container {
+  background-color: var(--white);
+  width: 90%;
+  max-width: 48rem;
+  padding: 2.5rem;
+  border-radius: 2.3rem;
+  margin: 0 0 var(--spacing-lg) 0;
+}
+
+/* H1 section start */
+.h1_area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: var(--spacing-sm);
+}
+
+.h1_area .img_container {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 var(--spacing-md) 0 0;
+}
+
+.h1_area .img_container img {
+  width: 100%;
+  height: 100%;
+}
+
+.h1_area h1 {
+  font-size: 2.9rem;
+  color: var(--Dark-purple);
+}
+
+/* H1 section end */
+
+/*  body section start  */
+
+.container .nottes {
+  margin: var(--spacing-sm) 0 var(--spacing-sm) 0;
+  padding: var(--spacing-sm);
+}
+
+.nottes .bodyTexts {
+  padding: var(--spacing-md) 0;
+  position: relative;
+}
+
+.nottes .bodyTexts .img_slot {
+  position: absolute;
+  top: 0.6rem;
+  right: -1rem;
+}
+
+.nottes .bodyTexts p {
+  padding: var(--spacing-md) 0;
+  max-width: 33rem;
+  color: var(--Grayish-purple);
+}
+
+.nottes .bodyTexts:not(:last-child) {
+  border-bottom: 0.1rem solid var(--Light-pink);
+}
+
+/*  body section end  */
+
+/* FOOTER */
+.attribution {
+  font-size: 1.1rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* media query */
+
+@media only screen and (max-width: 33.125em) {
+  .nottes h2 {
+    font-size: 1.3em;
+  }
+}
+@media only screen and (max-width: 28.875em) {
+  .nottes h2 {
+    max-width: 75%;
+  }
+
+  body::before {
+    background-image: url(../images/background-pattern-mobile.svg);
+  }
+}
